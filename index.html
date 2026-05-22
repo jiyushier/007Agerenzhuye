@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纪屿十二的小站</title>
+    <link rel="icon" href="./assets/avatar.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ocean-background"></div>
+    <div id="ambient-glow" aria-hidden="true"></div>
+    <div id="starfield" aria-hidden="true"></div>
+    <div id="particles-container"></div>
+
+    <header class="navbar">
+        <div class="logo">纪屿十二</div>
+        <nav class="nav-links">
+            <a href="#hero">主页</a>
+            <a href="#folders">分类入口</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <p class="hero-name">纪屿十二</p>
+                    <h1 class="hero-title">让我们来一起跃入幻想之海吧</h1>
+                    <p class="hero-subtitle">女性向音声创作者｜作品入口｜小工具｜个人网站导航</p>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="avatar-glow-wrap">
+                        <span class="avatar-spark avatar-spark--1" aria-hidden="true"></span>
+                        <span class="avatar-spark avatar-spark--2" aria-hidden="true"></span>
+                        <span class="avatar-spark avatar-spark--3" aria-hidden="true"></span>
+                        <img src="./assets/avatar.png" alt="纪屿十二头像" class="profile-avatar">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="folders" class="folders-section">
+            <div class="container">
+                <div id="folder-grid-root" class="folder-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 纪屿十二 · 让我们来一起跃入幻想之海吧</p>
+    </footer>
+
+    <div id="folder-modal" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button type="button" class="modal-close" data-modal-close aria-label="关闭">×</button>
+            <div class="modal-header">
+                <span id="modal-icon" class="modal-icon"></span>
+                <div>
+                    <h2 id="modal-title" class="modal-title"></h2>
+                    <p id="modal-desc" class="modal-desc"></p>
+                </div>
+            </div>
+            <div id="modal-links" class="modal-link-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
