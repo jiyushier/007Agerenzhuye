@@ -294,12 +294,15 @@ body.modal-open {
 
 .folder-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 3vw, 22px);
 }
 
 .folder-card {
+    min-width: 0;
     width: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 0.88;
     text-align: left;
     cursor: pointer;
     font-family: inherit;
@@ -328,7 +331,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
-    min-height: 148px;
+    min-height: 0;
 }
 
 .folder-card::before {
@@ -416,6 +419,8 @@ body.modal-open {
     font-weight: 500;
     letter-spacing: 0.5px;
     color: #eef2ff;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .folder-desc {
@@ -423,6 +428,8 @@ body.modal-open {
     color: var(--text-muted);
     line-height: 1.55;
     flex-grow: 1;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .folder-hint {
@@ -769,20 +776,28 @@ body.modal-open {
         height: 160px;
     }
 
+}
+
+@media (min-width: 900px) {
     .folder-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.25rem;
     }
 
     .folder-card {
-        min-height: 160px;
+        aspect-ratio: 1 / 0.92;
         padding: 1.5rem;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 359px) {
     .folder-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .folder-card {
+        aspect-ratio: auto;
+        min-height: 150px;
     }
 }
 
