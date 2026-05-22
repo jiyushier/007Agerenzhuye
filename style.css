@@ -760,6 +760,19 @@ body.modal-open {
     word-break: break-word;
 }
 
+.modal-link-safety {
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: #a8c4dc;
+    margin: 0 0 0.65rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 10px;
+    background: rgba(125, 211, 252, 0.06);
+    border: 1px solid rgba(125, 211, 252, 0.12);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .modal-link-actions {
     display: flex;
     flex-wrap: wrap;

@@ -1,4 +1,10 @@
 // ========== 链接数据：以后只需改这个数组 ==========
+const MEDIAFIRE_SAFETY_HINT =
+    "免费云盘页面可能会出现广告跳转，请认准 MediaFire 官方网址：mediafire.com。任何要求发短信、手机号验证、安装 App 的页面都不是下载入口，请直接关闭，不要点击或发送短信。";
+
+const GOFILE_SAFETY_HINT =
+    "免费云盘页面可能会出现广告跳转，请认准 Gofile 官方网址：gofile.io。任何要求发短信、手机号验证、安装 App 的页面都不是下载入口，请直接关闭，不要点击或发送短信。";
+
 const linkGroups = [
     {
         title: "免费作品收听",
@@ -15,6 +21,7 @@ const linkGroups = [
             {
                 title: "免费作品云盘一",
                 desc: "国内听众可用的免费作品合集云盘。如果找不到作品，可以把显示顺序切换为按时间排序。",
+                safetyHint: MEDIAFIRE_SAFETY_HINT,
                 url: "https://www.mediafire.com/folder/z8dyss6c76y32/%E5%85%8D%E8%B4%B9%E4%BD%9C%E5%93%81%E5%90%88%E9%9B%86",
                 tag: "云盘",
                 btnText: "打开"
@@ -22,6 +29,7 @@ const linkGroups = [
             {
                 title: "免费作品云盘二",
                 desc: "备用免费作品云盘入口，国内听众也可以直接打开。",
+                safetyHint: GOFILE_SAFETY_HINT,
                 url: "https://gofile.io/d/KMBMCU",
                 tag: "备用云盘",
                 btnText: "打开"
@@ -315,6 +323,14 @@ function createModalLinkCard(item) {
 
     card.appendChild(head);
     card.appendChild(p);
+
+    if (item.safetyHint) {
+        const safety = document.createElement("p");
+        safety.className = "modal-link-safety";
+        safety.textContent = item.safetyHint;
+        card.appendChild(safety);
+    }
+
     card.appendChild(actions);
     return card;
 }
