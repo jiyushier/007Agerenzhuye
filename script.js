@@ -3,7 +3,7 @@ const linkGroups = [
     {
         title: "免费作品收听",
         icon: "🎧",
-        desc: "免费作品、全部作品、云盘入口、随机推荐",
+        desc: "免费作品、全部作品、云盘入口",
         items: [
             {
                 title: "Fanbox 免费作品合集",
@@ -62,21 +62,21 @@ const linkGroups = [
         desc: "X / 微博 / B站 / 抖音 / 网易云 / YouTube",
         items: [
             {
-                title: "Twitter / X 大号",
+                title: "X / Twitter：纪屿十二 @JiYuan1208",
                 desc: "主要更新号，新作品发布通知、作品动态和日常公告都会放在这里。",
                 url: "https://x.com/JiYuan1208",
                 tag: "主要更新",
                 btnText: "打开"
             },
             {
-                title: "Twitter / X 小号",
+                title: "X / Twitter：纪屿十二 @jiyuan1802",
                 desc: "早期作品、碎碎念和更日常一点的内容。",
                 url: "https://x.com/jiyuan1802",
                 tag: "碎碎念",
                 btnText: "打开"
             },
             {
-                title: "微博主页",
+                title: "微博：纪屿十二",
                 desc: "面向国内听众的主要更新入口，发布内容和 X 大号基本一致。",
                 url: "https://weibo.com/u/5985243129",
                 tag: "国内更新",
