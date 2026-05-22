@@ -245,6 +245,31 @@ function createModalLinkCard(item) {
 
 let activeModalIndex = null;
 
+function lockBodyScroll() {
+    const scrollY = window.scrollY;
+    document.body.dataset.scrollY = String(scrollY);
+    document.documentElement.classList.add("modal-open");
+    document.body.classList.add("modal-open");
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+}
+
+function unlockBodyScroll() {
+    const scrollY = Number(document.body.dataset.scrollY || 0);
+    document.documentElement.classList.remove("modal-open");
+    document.body.classList.remove("modal-open");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    delete document.body.dataset.scrollY;
+    window.scrollTo(0, scrollY);
+}
+
 function openModal(groupIndex) {
     const group = linkGroups[groupIndex];
     if (!group) return;
@@ -269,7 +294,7 @@ function openModal(groupIndex) {
     activeModalIndex = groupIndex;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
+    lockBodyScroll();
 }
 
 function closeModal() {
@@ -278,7 +303,7 @@ function closeModal() {
 
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
+    unlockBodyScroll();
     activeModalIndex = null;
 }
 

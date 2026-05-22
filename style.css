@@ -33,8 +33,14 @@ body {
     line-height: 1.6;
 }
 
+html.modal-open,
 body.modal-open {
     overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body.modal-open {
+    touch-action: none;
 }
 
 /* --- 深海背景与气泡层 --- */
@@ -426,15 +432,17 @@ body.modal-open {
         rgba(1, 4, 12, 0.82);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+    touch-action: none;
 }
 
 .modal-dialog {
     position: relative;
     width: min(92vw, 640px);
     max-width: 100%;
-    max-height: min(88vh, 720px);
+    max-height: min(86vh, 760px);
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
+    touch-action: pan-y;
     background: linear-gradient(
         165deg,
         rgba(18, 28, 58, 0.92) 0%,
@@ -532,14 +540,18 @@ body.modal-open {
 }
 
 .modal-link-grid {
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     gap: 0.65rem;
     padding-right: 0.15rem;
     min-width: 0;
     max-width: 100%;
+    touch-action: pan-y;
     -webkit-overflow-scrolling: touch;
 }
 
