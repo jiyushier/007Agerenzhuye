@@ -1,7 +1,7 @@
 // ========== 链接数据：以后只需改这个数组 ==========
 const linkGroups = [
     {
-        title: "作品收听",
+        title: "免费作品收听",
         icon: "🎧",
         desc: "免费作品、全部作品、云盘入口、随机推荐",
         items: [
@@ -29,7 +29,7 @@ const linkGroups = [
         ]
     },
     {
-        title: "付费购买",
+        title: "解锁付费作品",
         icon: "💎",
         desc: "付费作品站、淘宝店、作品简介",
         items: [
@@ -104,6 +104,13 @@ const linkGroups = [
                 btnText: "打开"
             },
             {
+                title: "QQ 作品群：超自然现象研究院",
+                desc: "作品通知、交流与群内更新入口。群号：199632272。",
+                url: "https://qm.qq.com/q/9cl4pMR47m",
+                tag: "QQ群",
+                btnText: "加入"
+            },
+            {
                 title: "抖音：纪屿十二",
                 desc: "短视频平台主页，也可以在抖音直接搜索抖音号：95228341469。",
                 url: "https://www.douyin.com/user/MS4wLjABAAAAc4GLQPny4hPeTETeo58D3-HGFpnIyd86hoSX8Y-aRfqqTqkjP0qZXsog8Xhx9uCn?from_tab_name=main",
@@ -140,10 +147,11 @@ const linkGroups = [
             },
             {
                 title: "调教飞行棋 / 调教卡牌",
-                desc: "互动玩法小工具，包含飞行棋模式和卡牌模式。",
-                url: "https://feixingqi-9dr.pages.dev/",
-                tag: "互动工具",
-                btnText: "进入"
+                desc: "互动玩法小工具，目前正在优化中，等待上线～",
+                url: "#",
+                tag: "优化中",
+                btnText: "暂未开放",
+                pendingHint: "调教飞行棋 / 调教卡牌正在优化中，等待上线～"
             },
             {
                 title: "豆包 AI 智能体",
@@ -164,35 +172,15 @@ const linkGroups = [
     {
         title: "说明公告",
         icon: "📢",
-        desc: "购买说明、教学视频、更新公告、备用总入口",
+        desc: "站点公告与通知",
         items: [
             {
-                title: "购买与收听说明",
-                desc: "后续可以放购买教程、下载教程、常见问题和注意事项。",
+                title: "公告",
+                desc: "暂无公告。",
                 url: "#",
-                tag: "教程",
-                btnText: "待补充"
-            },
-            {
-                title: "教学视频",
-                desc: "后续可以放 B站或其他平台的教学视频链接。",
-                url: "#",
-                tag: "视频教程",
-                btnText: "待补充"
-            },
-            {
-                title: "更新公告",
-                desc: "后续可以放作品更新、云盘说明、工具更新日志等。",
-                url: "#",
-                tag: "公告",
-                btnText: "待补充"
-            },
-            {
-                title: "总入口 Linktree",
-                desc: "备用总入口，收录部分常用链接。",
-                url: "https://linktr.ee/jiyu12",
-                tag: "总入口",
-                btnText: "打开"
+                tag: "暂无",
+                btnText: "暂无公告",
+                pendingHint: "暂无公告。"
             }
         ]
     }
