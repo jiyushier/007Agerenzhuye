@@ -373,8 +373,8 @@ body.modal-open {
     margin-bottom: 0.8rem;
     font-size: 1.75rem;
     line-height: 1;
-    color: #bdefff;
-    filter: drop-shadow(0 0 10px rgba(120, 210, 255, 0.32));
+    color: #7dd3fc;
+    filter: drop-shadow(0 0 10px rgba(125, 211, 252, 0.35));
     transition: filter 0.35s ease, transform 0.35s ease;
 }
 
@@ -390,9 +390,18 @@ body.modal-open {
     object-fit: contain;
 }
 
+.folder-icon--svg .folder-icon-svg path {
+    fill: #7dd3fc;
+}
+
 .folder-card:hover .folder-icon {
-    filter: drop-shadow(0 0 14px rgba(125, 211, 252, 0.45));
+    color: #7dd3fc;
+    filter: drop-shadow(0 0 14px rgba(125, 211, 252, 0.55));
     transform: scale(1.05);
+}
+
+.folder-card:hover .folder-icon--svg .folder-icon-svg path {
+    fill: #7dd3fc;
 }
 
 @media (max-width: 768px) {
