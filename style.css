@@ -21,7 +21,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     overflow-x: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
@@ -37,10 +37,11 @@ html.modal-open,
 body.modal-open {
     overflow: hidden;
     overscroll-behavior: none;
+    height: 100%;
 }
 
 body.modal-open {
-    touch-action: none;
+    width: 100%;
 }
 
 /* --- 深海背景与气泡层 --- */
@@ -422,6 +423,7 @@ body.modal-open {
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
+    touch-action: pan-y;
 }
 
 .modal-backdrop {

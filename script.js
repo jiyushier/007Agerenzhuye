@@ -196,7 +196,8 @@ function createLinkAction(item) {
         btn.type = "button";
         btn.className = "link-btn link-btn-pending";
         btn.textContent = item.btnText || "待补充";
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
             alert(item.pendingHint || "链接待补充");
         });
         return btn;
@@ -244,30 +245,74 @@ function createModalLinkCard(item) {
 }
 
 let activeModalIndex = null;
+let modalScrollY = 0;
+let isPageScrollLocked = false;
 
-function lockBodyScroll() {
-    const scrollY = window.scrollY;
-    document.body.dataset.scrollY = String(scrollY);
+function preventBackgroundTouchMove(e) {
+    const dialog = document.querySelector(".modal-dialog");
+    if (dialog && dialog.contains(e.target)) {
+        return;
+    }
+    e.preventDefault();
+}
+
+function lockPageScroll() {
+    if (isPageScrollLocked) {
+        return;
+    }
+
+    modalScrollY =
+        window.scrollY ||
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0;
+    isPageScrollLocked = true;
+
     document.documentElement.classList.add("modal-open");
     document.body.classList.add("modal-open");
+
     document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
+    document.body.style.top = `-${modalScrollY}px`;
     document.body.style.left = "0";
     document.body.style.right = "0";
     document.body.style.width = "100%";
+
+    document.addEventListener("touchmove", preventBackgroundTouchMove, {
+        passive: false
+    });
 }
 
-function unlockBodyScroll() {
-    const scrollY = Number(document.body.dataset.scrollY || 0);
+function unlockPageScroll() {
+    if (!isPageScrollLocked) {
+        return;
+    }
+
+    const scrollY = modalScrollY;
+
+    document.removeEventListener("touchmove", preventBackgroundTouchMove);
+
     document.documentElement.classList.remove("modal-open");
     document.body.classList.remove("modal-open");
+
     document.body.style.position = "";
     document.body.style.top = "";
     document.body.style.left = "";
     document.body.style.right = "";
     document.body.style.width = "";
-    delete document.body.dataset.scrollY;
-    window.scrollTo(0, scrollY);
+
+    isPageScrollLocked = false;
+    modalScrollY = 0;
+
+    if (typeof window.scrollTo === "function") {
+        try {
+            window.scrollTo({ top: scrollY, left: 0, behavior: "instant" });
+        } catch (_err) {
+            window.scrollTo(0, scrollY);
+        }
+    }
+    document.documentElement.scrollTop = scrollY;
+    document.body.scrollTop = scrollY;
 }
 
 function openModal(groupIndex) {
@@ -282,6 +327,10 @@ function openModal(groupIndex) {
 
     if (!modal || !linksRoot) return;
 
+    if (activeModalIndex === null) {
+        lockPageScroll();
+    }
+
     iconEl.textContent = group.icon || "";
     titleEl.textContent = group.title;
     descEl.textContent = group.desc || "";
@@ -294,7 +343,6 @@ function openModal(groupIndex) {
     activeModalIndex = groupIndex;
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
-    lockBodyScroll();
 }
 
 function closeModal() {
@@ -303,8 +351,8 @@ function closeModal() {
 
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
-    unlockBodyScroll();
     activeModalIndex = null;
+    unlockPageScroll();
 }
 
 function renderFolders() {
@@ -338,7 +386,10 @@ function renderFolders() {
         card.appendChild(desc);
         card.appendChild(hint);
 
-        card.addEventListener("click", () => openModal(index));
+        card.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal(index);
+        });
         root.appendChild(card);
     });
 }
@@ -348,7 +399,10 @@ function initModal() {
     if (!modal) return;
 
     modal.querySelectorAll("[data-modal-close]").forEach((el) => {
-        el.addEventListener("click", closeModal);
+        el.addEventListener("click", (e) => {
+            e.preventDefault();
+            closeModal();
+        });
     });
 
     document.addEventListener("keydown", (e) => {
