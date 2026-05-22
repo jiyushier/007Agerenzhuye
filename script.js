@@ -355,7 +355,7 @@ function initBubbles() {
     const container = document.getElementById("particles-container");
     if (!container) return;
 
-    const BUBBLE_COUNT = 10;
+    const BUBBLE_COUNT = 18;
 
     function createBubble() {
         if (!document.body.contains(container)) return;
@@ -363,14 +363,14 @@ function initBubbles() {
         const bubble = document.createElement("div");
         bubble.classList.add("bubble");
 
-        const size = Math.random() * 4 + 2;
+        const size = Math.random() * 7 + 3;
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.left = `${Math.random() * 100}vw`;
 
-        const duration = Math.random() * 20 + 18;
+        const duration = Math.random() * 16 + 12;
         bubble.style.animationDuration = `${duration}s`;
-        bubble.style.animationDelay = `${Math.random() * 12}s`;
+        bubble.style.animationDelay = `${Math.random() * 10}s`;
 
         container.appendChild(bubble);
 
