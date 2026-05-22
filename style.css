@@ -661,6 +661,7 @@ body.modal-open {
 .modal-link-actions {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.5rem;
     max-width: 100%;
 }
 

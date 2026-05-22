@@ -35,21 +35,21 @@ const linkGroups = [
         items: [
             {
                 title: "Payhip 付费作品站",
-                desc: "主要付费作品网站，包含完整作品、作品介绍、试听片段和更新内容。",
+                desc: "主要付费作品网站，包含完整作品、作品介绍、试听片段和更新内容。兑换码使用方法，以及如何注册海外支付方式，请查看「说明公告」里的详细教程。",
                 url: "https://payhip.com/jiyu12",
                 tag: "付费作品",
                 btnText: "查看"
             },
             {
                 title: "淘宝店：纪屿十二的店铺",
-                desc: "给没有海外支付方式的国内听众使用，作品内容和付费站基本一致。",
+                desc: "给没有海外支付方式的国内听众使用，作品内容和付费站一致。淘宝店没有详细作品简介，想了解作品设定和内容介绍的话，可以先点下方「付费作品简介文档」查看简介，再回淘宝购买。",
                 url: "https://shop538816235.taobao.com/",
                 tag: "国内购买",
                 btnText: "打开"
             },
             {
                 title: "付费作品简介文档",
-                desc: "如果付费作品网站打不开，可以先在这里查看作品简介、设定和说明。",
+                desc: "作品简介、设定和说明文档。如果付费作品站打不开，或者想在淘宝购买前先了解作品内容，可以先在这里查看简介。",
                 url: "https://stupendous-cobweb-50f.notion.site/2-30305c676dee80999cbdef5b1c6111c6?source=copy_link",
                 tag: "作品简介",
                 btnText: "查看"
@@ -172,15 +172,37 @@ const linkGroups = [
     {
         title: "说明公告",
         icon: "📢",
-        desc: "站点公告与通知",
+        desc: "兑换码教程、海外支付方式说明",
         items: [
             {
-                title: "公告",
-                desc: "暂无公告。",
-                url: "#",
-                tag: "暂无",
-                btnText: "暂无公告",
-                pendingHint: "暂无公告。"
+                title: "兑换码使用方法",
+                desc: "购买后不知道怎么使用兑换码的话，可以查看教程。链接一和链接二内容作用相同，可优先打开链接一，打不开再试链接二。",
+                tag: "教程",
+                links: [
+                    {
+                        label: "链接一",
+                        url: "https://docs.qq.com/doc/DUHB2aktCVmN3YXhs"
+                    },
+                    {
+                        label: "链接二",
+                        url: "https://stupendous-cobweb-50f.notion.site/PayPal-2df05c676dee80139bffdba631253ab5"
+                    }
+                ]
+            },
+            {
+                title: "海外支付方式注册说明",
+                desc: "没有海外支付方式、想注册备用支付方式的话，可以查看教程。链接一和链接二是不同平台的备用入口，可优先打开链接一，打不开再试链接二。",
+                tag: "教程",
+                links: [
+                    {
+                        label: "链接一",
+                        url: "https://stupendous-cobweb-50f.notion.site/2c905c676dee80e79e5fda239957d984"
+                    },
+                    {
+                        label: "链接二",
+                        url: "https://docs.qq.com/doc/DUEVZYkJwZEhkd3JN"
+                    }
+                ]
             }
         ]
     }
@@ -214,6 +236,26 @@ function createFolderIconElement(title, fallbackIcon) {
 
 function isPendingUrl(url) {
     return !url || url === "#" || url.trim() === "#";
+}
+
+function appendItemLinkActions(container, item) {
+    if (Array.isArray(item.links) && item.links.length > 0) {
+        item.links.forEach((linkItem) => {
+            if (!linkItem || isPendingUrl(linkItem.url)) {
+                return;
+            }
+            const link = document.createElement("a");
+            link.href = linkItem.url;
+            link.className = "link-btn";
+            link.textContent = linkItem.label || "打开";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            container.appendChild(link);
+        });
+        return;
+    }
+
+    container.appendChild(createLinkAction(item));
 }
 
 function createLinkAction(item) {
@@ -262,7 +304,7 @@ function createModalLinkCard(item) {
 
     const actions = document.createElement("div");
     actions.className = "modal-link-actions";
-    actions.appendChild(createLinkAction(item));
+    appendItemLinkActions(actions, item);
 
     card.appendChild(head);
     card.appendChild(p);
