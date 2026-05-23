@@ -91,10 +91,10 @@ const linkGroups = [
                 btnText: "打开"
             },
             {
-                title: "微博小号：纪屿十二的分身",
-                desc: "微博碎碎念小号，作用类似 X 小号，会放一些更日常的内容。",
+                title: "微博小号：纪红豆_",
+                desc: "日常碎碎念和可爱红豆人格出没地，偏轻松一点。",
                 url: "https://weibo.com/u/7727199267",
-                tag: "碎碎念",
+                tag: "小号日常",
                 btnText: "打开"
             },
             {
