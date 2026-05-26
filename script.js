@@ -1,38 +1,23 @@
 // ========== 链接数据：以后只需改这个数组 ==========
-const MEDIAFIRE_SAFETY_HINT =
-    "免费云盘页面可能会出现广告跳转，请认准 MediaFire 官方网址：mediafire.com。任何要求发短信、手机号验证、安装 App 的页面都不是下载入口，请直接关闭，不要点击或发送短信。";
-
-const GOFILE_SAFETY_HINT =
-    "免费云盘页面可能会出现广告跳转，请认准 Gofile 官方网址：gofile.io。任何要求发短信、手机号验证、安装 App 的页面都不是下载入口，请直接关闭，不要点击或发送短信。";
-
 const linkGroups = [
     {
         title: "免费作品收听",
         icon: "🎧",
-        desc: "免费作品、全部作品、云盘入口",
+        desc: "免费作品在线播放、Fanbox 合集",
         items: [
             {
+                title: "免费作品在线播放 / 下载",
+                desc: "按分类浏览我的免费音频与视频，可以在线播放，也可以下载保存。支持搜索、播放列表、定时停止，更适合手机收听。",
+                url: "https://ting.jiyu12.com",
+                tag: "推荐入口",
+                btnText: "进入播放器"
+            },
+            {
                 title: "Fanbox 免费作品合集",
-                desc: "全部免费音频作品入口，各种类型的作品都会收录在这里。",
+                desc: "旧版免费音频合集入口，部分作品说明和历史合集可以在这里查看。",
                 url: "https://jiyu12.fanbox.cc/",
                 tag: "免费作品",
                 btnText: "进入"
-            },
-            {
-                title: "免费作品云盘一",
-                desc: "国内听众可用的免费作品合集云盘。如果找不到作品，可以把显示顺序切换为按时间排序。",
-                safetyHint: MEDIAFIRE_SAFETY_HINT,
-                url: "https://www.mediafire.com/folder/z8dyss6c76y32/%E5%85%8D%E8%B4%B9%E4%BD%9C%E5%93%81%E5%90%88%E9%9B%86",
-                tag: "云盘",
-                btnText: "打开"
-            },
-            {
-                title: "免费作品云盘二",
-                desc: "备用免费作品云盘入口，国内听众也可以直接打开。",
-                safetyHint: GOFILE_SAFETY_HINT,
-                url: "https://gofile.io/d/KMBMCU",
-                tag: "备用云盘",
-                btnText: "打开"
             }
         ]
     },
