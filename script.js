@@ -118,6 +118,13 @@ const linkGroups = [
                 btnText: "打开"
             },
             {
+                title: "小红书主页",
+                desc: "日常分享 / 作品动态 / 碎碎念",
+                url: "【这里替换成我的小红书主页链接】",
+                tag: "小红书",
+                btnText: "打开小红书"
+            },
+            {
                 title: "P站主页",
                 desc: "部分公开视频内容入口，不是完整作品库。",
                 url: "https://cn.pornhub.com/model/jiyu12",
@@ -134,7 +141,7 @@ const linkGroups = [
             {
                 title: "今天听什么随机推荐器",
                 desc: "随机推荐免费作品，也可以作为不知道听什么时的网页小工具入口。",
-                url: "https://jiyushier.github.io/005b-eating/",
+                url: "https://haofan.jiyu12.com/",
                 tag: "随机推荐",
                 btnText: "进入"
             },
@@ -142,6 +149,7 @@ const linkGroups = [
                 title: "调教飞行棋 / 调教卡牌",
                 desc: "互动玩法小工具，目前正在优化中，等待上线～",
                 url: "#",
+                futureUrl: "https://feixingqi.jiyu12.com/",
                 tag: "优化中",
                 btnText: "暂未开放",
                 pendingHint: "调教飞行棋 / 调教卡牌正在优化中，等待上线～"
