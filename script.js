@@ -178,14 +178,10 @@ const linkGroups = [
             },
             {
                 title: "高德地图 AI 领航员",
-                desc: "我做的高德地图 AI 领航员语音包。整体声音人机味会比较重，不过我额外录制了一些本音色的趣味语音，会在特定地点或场景下触发。",
-                url: "https://static5.gaode.com/activity/2020CommonLanding117/cn/2024TripExternalShare/index.html?id=283&digital_id=9cb613f8a8bf4b188a01d751b84056fe&share_from=digitalProShare&shareScene=digital_list_super_digital",
+                desc: "我做的高德地图 AI 领航员语音包。高德地图免费分享次数有限，所以只能上架成最低 1 元。有需要的话可以先点进去试听，再决定要不要购买。整体声音 AI 人机味会比较重，不过我额外录制了一些本音色的趣味语音，会在特定地点或场景下触发。",
+                url: "https://surl.amap.com/7WP0rDE1ddz3",
                 tag: "导航语音包",
-                btnText: "打开领取链接",
-                copyCode: "951339",
-                copyBtnText: "复制至尊码",
-                copySuccessText: "至尊码已复制",
-                safetyHint: "打开链接后输入至尊码【951339】，领取你的专属 AI 领航员。"
+                btnText: "打开试听 / 购买页面"
             },
             {
                 title: "百度地图语音包",
