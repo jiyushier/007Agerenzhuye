@@ -418,6 +418,21 @@ body.modal-open {
     object-fit: contain;
 }
 
+.folder-icon .profile-icon-svg {
+    width: 92%;
+    height: 92%;
+}
+
+.folder-icon .tool-icon-svg {
+    width: 82%;
+    height: 82%;
+}
+
+.folder-icon .notice-icon-svg {
+    width: 90%;
+    height: 90%;
+}
+
 .folder-icon--svg .folder-icon-svg path {
     fill: #7dd3fc;
 }
@@ -646,6 +661,21 @@ body.modal-open {
     height: 100%;
     display: block;
     object-fit: contain;
+}
+
+.modal-icon .profile-icon-svg {
+    width: 92%;
+    height: 92%;
+}
+
+.modal-icon .tool-icon-svg {
+    width: 82%;
+    height: 82%;
+}
+
+.modal-icon .notice-icon-svg {
+    width: 90%;
+    height: 90%;
 }
 
 .modal-icon--svg .folder-icon-svg path {
