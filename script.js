@@ -178,7 +178,7 @@ const linkGroups = [
             },
             {
                 title: "高德地图 AI 领航员",
-                desc: "我做的高德地图 AI 领航员语音包。整体声音人机味会比较重，但部分语音使用了我的本音色。",
+                desc: "我做的高德地图 AI 领航员语音包。整体声音人机味会比较重，不过我额外录制了一些本音色的趣味语音，会在特定地点或场景下触发。",
                 url: "https://static5.gaode.com/activity/2020CommonLanding117/cn/2024TripExternalShare/index.html?id=283&digital_id=9cb613f8a8bf4b188a01d751b84056fe&share_from=digitalProShare&shareScene=digital_list_super_digital",
                 tag: "导航语音包",
                 btnText: "打开领取链接",
@@ -186,6 +186,26 @@ const linkGroups = [
                 copyBtnText: "复制至尊码",
                 copySuccessText: "至尊码已复制",
                 safetyHint: "打开链接后输入至尊码【951339】，领取你的专属 AI 领航员。"
+            },
+            {
+                title: "百度地图语音包",
+                desc: "我做的百度地图导航语音包。复制口令后打开百度地图，可以领取或使用对应语音包。",
+                url: "https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779852963457854&timestamp=1779856137",
+                tag: "导航语音包",
+                btnText: "打开百度地图链接",
+                copyCode: "3:/ 纪屿十二https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779852963457854&timestamp=1779856137 复制这条消息打开百度地图3.s:/¥^4u5AZBz9Kf^碱堷劃寄蔠釿咕街",
+                copyBtnText: "复制口令",
+                copySuccessText: "百度地图口令已复制"
+            },
+            {
+                title: "百度地图趣味语音",
+                desc: "我做的百度地图趣味语音。复制口令后打开百度地图，可以领取或使用对应语音。",
+                url: "https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779855731927475&timestamp=1779855790",
+                tag: "趣味语音",
+                btnText: "打开百度地图链接",
+                copyCode: "5:/ 纪屿十二趣味语音https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779855731927475&timestamp=1779855790 复制这条消息打开百度地图3.s:/¥^yrZOlF0eXp^夌拤洱恆槳碌丼笋",
+                copyBtnText: "复制口令",
+                copySuccessText: "百度地图趣味语音口令已复制"
             }
         ]
     },
