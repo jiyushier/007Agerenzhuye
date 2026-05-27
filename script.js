@@ -177,31 +177,36 @@ const linkGroups = [
                 btnText: "打开"
             },
             {
-                title: "高德地图 AI 领航员",
-                desc: "我做的高德地图 AI 领航员语音包。高德地图免费分享次数有限，所以只能上架成最低 1 元。有需要的话可以先点进去试听，再决定要不要购买。整体声音 AI 人机味会比较重，不过我额外录制了一些本音色的趣味语音，会在特定地点或场景下触发。",
+                title: "高德地图语音包",
+                desc: "高德地图语音包已上架，因免费分享次数有限，设置为最低 1 元。可以先试听再决定是否购买。整体 AI 味较重，但有一些本音色趣味语音，会在特定地点或场景下触发。",
                 url: "https://surl.amap.com/7WP0rDE1ddz3",
                 tag: "导航语音包",
                 btnText: "打开试听 / 购买页面"
             },
             {
                 title: "百度地图语音包",
-                desc: "我做的百度地图导航语音包。复制口令后打开百度地图，可以领取或使用对应语音包。",
-                url: "https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779852963457854&timestamp=1779856137",
+                desc: "包含百度地图导航语音包和趣味语音。复制对应口令后打开百度地图，即可领取或使用。",
                 tag: "导航语音包",
-                btnText: "打开百度地图链接",
-                copyCode: "3:/ 纪屿十二https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779852963457854&timestamp=1779856137 复制这条消息打开百度地图3.s:/¥^4u5AZBz9Kf^碱堷劃寄蔠釿咕街",
-                copyBtnText: "复制口令",
-                copySuccessText: "百度地图口令已复制"
-            },
-            {
-                title: "百度地图趣味语音",
-                desc: "我做的百度地图趣味语音。复制口令后打开百度地图，可以领取或使用对应语音。",
-                url: "https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779855731927475&timestamp=1779855790",
-                tag: "趣味语音",
-                btnText: "打开百度地图链接",
-                copyCode: "5:/ 纪屿十二趣味语音https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779855731927475&timestamp=1779855790 复制这条消息打开百度地图3.s:/¥^yrZOlF0eXp^夌拤洱恆槳碌丼笋",
-                copyBtnText: "复制口令",
-                copySuccessText: "百度地图趣味语音口令已复制"
+                links: [
+                    {
+                        label: "打开语音包",
+                        url: "https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779852963457854&timestamp=1779856137"
+                    },
+                    {
+                        label: "复制语音包口令",
+                        copyCode: "3:/ 纪屿十二https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779852963457854&timestamp=1779856137 复制这条消息打开百度地图3.s:/¥^4u5AZBz9Kf^碱堷劃寄蔠釿咕街",
+                        copySuccessText: "语音包口令已复制"
+                    },
+                    {
+                        label: "打开趣味语音",
+                        url: "https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779855731927475&timestamp=1779855790"
+                    },
+                    {
+                        label: "复制趣味语音口令",
+                        copyCode: "5:/ 纪屿十二趣味语音https://map.baidu.com/zt/y2019/qinniao/index.html?id=4-1779855731927475&timestamp=1779855790 复制这条消息打开百度地图3.s:/¥^yrZOlF0eXp^夌拤洱恆槳碌丼笋",
+                        copySuccessText: "趣味语音口令已复制"
+                    }
+                ]
             }
         ]
     },
@@ -337,7 +342,7 @@ function createCopyAction(item) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "link-btn";
-    btn.textContent = item.copyBtnText || "复制";
+    btn.textContent = item.copyBtnText || item.label || "复制";
     btn.addEventListener("click", async (e) => {
         e.preventDefault();
         const copied = await copyText(item.copyCode);
@@ -349,7 +354,14 @@ function createCopyAction(item) {
 function appendItemLinkActions(container, item) {
     if (Array.isArray(item.links) && item.links.length > 0) {
         item.links.forEach((linkItem) => {
-            if (!linkItem || isPendingUrl(linkItem.url)) {
+            if (!linkItem) {
+                return;
+            }
+            if (linkItem.copyCode) {
+                container.appendChild(createCopyAction(linkItem));
+                return;
+            }
+            if (isPendingUrl(linkItem.url)) {
                 return;
             }
             const link = document.createElement("a");
