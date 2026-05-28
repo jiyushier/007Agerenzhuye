@@ -147,6 +147,13 @@ const linkGroups = [
         desc: "今天听什么、调教飞行棋 / 调教卡牌等",
         items: [
             {
+                title: "项目完成进度",
+                desc: "把任务拆成步骤，一项一项完成。适合记录重复活动、打卡流程、发布流程、学习计划，也可以当成简单备忘录使用。点进网站后有更具体的使用说明。",
+                url: "https://progress.jiyu12.com/",
+                tag: "进度工具",
+                btnText: "打开"
+            },
+            {
                 title: "今天听什么随机推荐器",
                 desc: "随机推荐免费作品，也可以作为不知道听什么时的网页小工具入口。",
                 url: "https://haofan.jiyu12.com/",

@@ -596,13 +596,17 @@ body.modal-open {
     position: absolute;
     top: 0.75rem;
     right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 36px;
     height: 36px;
+    padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-muted);
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1;
     cursor: pointer;
     transition:
@@ -806,11 +810,15 @@ body.modal-open {
 .modal-link-actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 0.5rem;
+    width: 100%;
     max-width: 100%;
 }
 
 .paid-intro-actions {
+    justify-content: flex-end;
+    width: 100%;
     margin-bottom: 0.5rem;
 }
 
