@@ -1,0 +1,48 @@
+
+# --- added by global gitignore patch ---
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+*.bak
+*.log
+*.part
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend cache
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+dist/
+build/
+.cache/
+.vite/
+
+# Local env / secrets
+.env
+.env.*
+*.local
+
+# App runtime logs
+logs/
+*.log
+
+# Common generated reports / temporary backups
+backup_*/
+*_backup/
+*_bak/
+temp/
+tmp/
+
