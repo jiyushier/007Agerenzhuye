@@ -963,10 +963,26 @@ function initModal() {
     });
 }
 
+const MODAL_QUERY_MAP = {
+    paid: "解锁付费作品"
+};
+
+function openModalFromQuery() {
+    const key = new URLSearchParams(window.location.search).get("modal");
+    if (!key) return;
+    const title = MODAL_QUERY_MAP[key];
+    if (!title) return;
+    const index = linkGroups.findIndex((group) => group.title === title);
+    if (index >= 0) {
+        openModal(index);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderFolders();
     initModal();
     initBubbles();
+    openModalFromQuery();
 });
 
 function initBubbles() {
