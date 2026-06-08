@@ -162,12 +162,10 @@ const linkGroups = [
             },
             {
                 title: "调教飞行棋 / 调教卡牌",
-                desc: "互动玩法小工具，目前正在优化中，等待上线～",
-                url: "#",
-                futureUrl: "https://feixingqi.jiyu12.com/",
-                tag: "优化中",
-                btnText: "暂未开放",
-                pendingHint: "调教飞行棋 / 调教卡牌正在优化中，等待上线～"
+                desc: "互动玩法小工具，飞行棋入口已开放。",
+                url: "https://feixingqi.jiyu12.com/",
+                tag: "已开放",
+                btnText: "进入"
             },
             {
                 title: "更多小工具",
