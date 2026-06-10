@@ -147,6 +147,28 @@ const linkGroups = [
         desc: "今天听什么、调教飞行棋 / 调教卡牌等",
         items: [
             {
+                title: "调教飞行棋 / 调教卡牌",
+                desc: "互动玩法小工具，飞行棋入口已开放。",
+                url: "https://feixingqi.jiyu12.com/",
+                tag: "已开放",
+                btnText: "进入"
+            },
+            {
+                title: "红豆便贴",
+                desc: "电脑桌面透明便签，支持百分百透明和文字穿透。",
+                tag: "桌面工具",
+                links: [
+                    {
+                        label: "看演示",
+                        url: "https://www.bilibili.com/video/BV15rE56jEyq/?share_source=copy_web&vd_source=2eca37d412ac2c07e2cde810726e8ad5"
+                    },
+                    {
+                        label: "下载",
+                        url: "https://audio.jiyu12.com/tools/hongdou-note/hongdou-note-windows.zip?v=20260609-tray-exit"
+                    }
+                ]
+            },
+            {
                 title: "项目完成进度",
                 desc: "把任务拆成步骤，一项一项完成。适合记录重复活动、打卡流程、发布流程、学习计划，也可以当成简单备忘录使用。点进网站后有更具体的使用说明。",
                 url: "https://progress.jiyu12.com/",
@@ -158,13 +180,6 @@ const linkGroups = [
                 desc: "随机推荐免费作品，也可以作为不知道听什么时的网页小工具入口。",
                 url: "https://haofan.jiyu12.com/",
                 tag: "随机推荐",
-                btnText: "进入"
-            },
-            {
-                title: "调教飞行棋 / 调教卡牌",
-                desc: "互动玩法小工具，飞行棋入口已开放。",
-                url: "https://feixingqi.jiyu12.com/",
-                tag: "已开放",
                 btnText: "进入"
             },
             {
