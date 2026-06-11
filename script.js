@@ -164,7 +164,7 @@ const linkGroups = [
                     },
                     {
                         label: "下载",
-                        url: "https://audio.jiyu12.com/tools/hongdou-note/hongdou-note-windows.zip?v=20260609-tray-exit"
+                        url: "https://audio.jiyu12.com/tools/hongdou-note/hongdou-note-windows.zip?v=20260610-win11-compat-mode"
                     }
                 ]
             },
